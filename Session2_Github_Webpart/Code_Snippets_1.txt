@@ -1,0 +1,63 @@
+This file contains a list of changes to be made in [root folder]\src\webparts\githubProfile\GithubProfileWebPart.ts
+
+1. Implement list name property validation
+
+1a: Method to validate a list property
+
+  private validateListName(value: string): Promise<string> {
+    return new Promise<string>((resolve: (validationErrorMessage: string) => void, reject: (error: any) => void): void => {
+      if (value === null ||
+        value.length === 0) {
+        resolve('Provide the list name');
+        return;
+      }
+
+      this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + 
+          `/_api/web/lists/getByTitle('${escape(value)}')?$select=Id`, SPHttpClient.configurations.v1)
+        .then((response: SPHttpClientResponse): void => {
+          if (response.ok) {
+            resolve('');
+          }
+          else if (response.status === 404) {
+            resolve(`List '${escape(value)}' doesn't exist in the current site`);
+          }
+          else {
+            resolve(`Error: ${response.statusText}. Please try again`);
+          }
+        })
+        .catch((error: any): void => {
+          resolve(error);
+        });
+    });
+  }
+
+1b. Add-in to validate the property
+
+                  onGetErrorMessage: this.validateListName.bind(this)
+
+
+2. Implement reading of user info from the list:
+
+    return new Promise<IUserInfo>((resolve, reject) => {
+      this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + 
+        `/_api/web/lists/getByTitle('${escape(this.properties.listName)}')/Items(${listItemId})?$select=GithubUserName,ApplicantFullName`, 
+        SPHttpClient.configurations.v1)
+      .then((response: SPHttpClientResponse): void => {        
+        if (response.ok) {
+          response.json().then((responseJSON) => {
+            if (responseJSON != null) {              
+              resolve({ githubUserName: responseJSON.GithubUserName, userFullName: responseJSON.ApplicantFullName });
+            }
+          });
+        }
+        else if (response.status === 404) {
+          reject(`Item with id ${listItemId} could not be found`);
+        }
+        else {
+          reject(`Error: ${response.statusText}. Cannot display information`);
+        }
+      })
+      .catch((error: any): void => {
+        reject(error);
+      });
+    });

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "9260d059-8306-427f-8d55-5622d5a7fe1d",
+  "alias": "GithubProfileWebPart",
+  "componentType": "WebPart",
+
+  "version": "*",
+  "manifestVersion": 2,
+
+  "requiresCustomScript": false,
+
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", 
+    "group": { "default": "Other" },
+    "title": { "default": "Github profile" },
+    "description": { "default": "Renders information from a user's github profile" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "listName": ""
+    }
+  }]
+}

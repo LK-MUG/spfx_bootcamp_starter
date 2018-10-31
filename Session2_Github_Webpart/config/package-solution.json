@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "lkmug-bootcamp-client-side-solution",
+    "id": "d606f634-e6f4-4b3f-80b9-569208d51700",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/lkmug-bootcamp.sppkg"
+  }
+}

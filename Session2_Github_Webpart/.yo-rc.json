@@ -1,0 +1,11 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": true,
+    "environment": "spo",
+    "version": "1.6.0",
+    "libraryName": "lkmug-bootcamp",
+    "libraryId": "d606f634-e6f4-4b3f-80b9-569208d51700",
+    "packageManager": "npm",
+    "componentType": "webpart"
+  }
+}

@@ -1,0 +1,35 @@
+This file contains a list of changes to be made in [root folder]\src\webparts\githubProfile\components\GithubProfile.tsx
+
+1. Show the header
+
+Github information for {this.props.userFullName}
+
+2. Implement display of repos
+
+2a. Show a loading indicator
+
+{
+  this.state.loading ? <span>Loading...</span> : <span>TODO: Display repos</>
+}
+
+2b. Implement the display of self-created repos
+
+                {
+                  this.state.loading ? <span>Loading...</span> : 
+                  this.state.repos ? this.state.repos.filter((repo) => !repo.isForked).map((repo) => 
+                    <span key={++repoCounter} id={"repo" + repoCounter}>{repo.repoName} <br/></span>): <span>None</span>
+                }
+
+2c. Implement the display of number of forks
+
+                {!this.state.loading ? <span id='forkCount'><br/>Additionally, {this.state.fullName} has forked {
+                  this.state.repos.filter((repo) => repo.isForked).length} repositories</span> : null
+                }
+
+3. Implement display of Events
+
+                  {this.state.loading ? <span>Loading...</span> : 
+                  this.state.events ? 
+                    this.state.events.map((event) => <span key={++eventCounter} id={"event" + eventCounter}>
+                    {new Date(Date.parse(event.eventDate)).toLocaleDateString()}: {event.eventType} in {event.eventRepo}<br/></span>)
+                  : <span>None</span>}
