@@ -1,0 +1,27 @@
+# Install
+npm i -g https://git@github.com/VelinGeorgiev/o365/raw/master/o365.tar
+
+
+# Exercise 1
+
+spo login https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN>
+
+spo web set --webUrl https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN> --title "YourTitle1"
+
+spo web get --webUrl https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN>
+
+
+# Exercise 2
+
+spo app add --scope sitecollection --siteUrl https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN> --filePath C:/package.sppkg
+
+spo app deploy --siteUrl  https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN> --id ef56277e-d7a9-400d-a22f-cb18317c0013 -s sitecollection --skipFeatureDeployment
+
+spo app list --scope sitecollection --siteUrl https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN>
+
+
+# Exercise 3
+
+spo page add --webUrl https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN> --name hr2.aspx
+
+spo page clientsidewebpart add --webUrl https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN> --pageName hr2.aspx --webPartId c032a042-bfc8-4bfb-abff-280ee82fc6cf
