@@ -1,27 +1,32 @@
+# Uninstall
+
+npm uninstall -g @pnp/office365-cli
+
 # Install
+
 npm i -g http://bit.ly/lko365
 
-alternative run:
+or alternative run:
 
 npm i -g https://git@github.com/VelinGeorgiev/o365/raw/master/o365.tar
 
 
 # Exercise 1
 
-spo login https://lkmug.sharepoint.com/sites/t2
+spo login https://lkmug.sharepoint.com/sites/MY_SITE
 
-spo web set --title "My Title" --webUrl https://lkmug.sharepoint.com/sites/t2
+spo web set --title "My Title" --webUrl https://lkmug.sharepoint.com/sites/MY_SITE
 
 
 # Exercise 2
 
-spo app add --scope sitecollection --siteUrl https://lkmug.sharepoint.com/sites/t2 --filePath C:\solution\lkmug-bootcamp.sppkg
+spo app add --scope sitecollection --siteUrl https://lkmug.sharepoint.com/sites/MY_SITE --filePath C:\solution\lkmug-bootcamp.sppkg
 
-spo app deploy -s sitecollection --skipFeatureDeployment --siteUrl  https://lkmug.sharepoint.com/sites/t2 --id ef56277e-d7a9-400d-a22f-cb18317c0013
+spo app deploy -s sitecollection --skipFeatureDeployment --siteUrl  https://lkmug.sharepoint.com/sites/MY_SITE --id ef56277e-d7a9-400d-a22f-cb18317c0013
 
 
 # Exercise 3
 
-spo page add --webUrl https://lkmug.sharepoint.com/sites/t2 --name hr2.aspx
+spo page add --webUrl https://lkmug.sharepoint.com/sites/MY_SITE --name hr2.aspx
 
-spo page clientsidewebpart add --webUrl https://lkmug.sharepoint.com/sites/t2 --pageName hr2.aspx --webPartId 9260d059-8306-427f-8d55-5622d5a7fe1d
+spo page clientsidewebpart add --webUrl https://lkmug.sharepoint.com/sites/MY_SITE --pageName hr2.aspx --webPartId 9260d059-8306-427f-8d55-5622d5a7fe1d

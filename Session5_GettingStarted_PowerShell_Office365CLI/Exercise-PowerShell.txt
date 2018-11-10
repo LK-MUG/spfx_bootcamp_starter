@@ -5,7 +5,7 @@ https://blog.velingeorgiev.com/install-powershell-5-nuget-sharepointpnppowershel
 
 # Exercise 1
 
-Connect-PnPOnline https://lkmug.sharepoint.com/sites/t1
+Connect-PnPOnline https://lkmug.sharepoint.com/sites/MY_SITE
 
 Set-PnPWeb -Title "My Title"
 
