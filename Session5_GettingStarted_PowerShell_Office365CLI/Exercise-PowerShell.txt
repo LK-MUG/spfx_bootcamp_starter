@@ -5,24 +5,18 @@ https://blog.velingeorgiev.com/install-powershell-5-nuget-sharepointpnppowershel
 
 # Exercise 1
 
-Connect-PnPOnline https://lkmug.sharepoint.com/sites/t1 -Credentials lk
+Connect-PnPOnline https://lkmug.sharepoint.com/sites/t1
 
-Set-PnPWeb -Title "YourTitle1"
-
-Get-PnPWeb
+Set-PnPWeb -Title "My Title"
 
 
 # Exercise 2
 
-Add-PnPApp -Path C:/cors-request-sender.sppkg -Publish -Scope Site -SkipFeatureDeployment
+Add-PnPApp -Scope Site -SkipFeatureDeployment -Path C:\solution\lkmug-bootcamp.sppkg -Publish
 
 
 # Exercise 3
 
 Add-PnPClientSidePage -Name hr2
 
-Add-PnPClientSideWebPart -Page hr2 -Component "PingWebPart"
-
-
-
-
+Add-PnPClientSideWebPart -Page hr2 -Component "Github profile"

@@ -4,24 +4,20 @@ npm i -g https://git@github.com/VelinGeorgiev/o365/raw/master/o365.tar
 
 # Exercise 1
 
-spo login https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN>
+spo login https://lkmug.sharepoint.com/sites/t2
 
-spo web set --webUrl https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN> --title "YourTitle1"
-
-spo web get --webUrl https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN>
+spo web set --title "My Title" --webUrl https://lkmug.sharepoint.com/sites/t2
 
 
 # Exercise 2
 
-spo app add --scope sitecollection --siteUrl https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN> --filePath C:/package.sppkg
+spo app add --scope sitecollection --siteUrl https://lkmug.sharepoint.com/sites/t2 --filePath C:\solution\lkmug-bootcamp.sppkg
 
-spo app deploy --siteUrl  https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN> --id ef56277e-d7a9-400d-a22f-cb18317c0013 -s sitecollection --skipFeatureDeployment
-
-spo app list --scope sitecollection --siteUrl https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN>
+spo app deploy -s sitecollection --skipFeatureDeployment --siteUrl  https://lkmug.sharepoint.com/sites/t2 --id ef56277e-d7a9-400d-a22f-cb18317c0013
 
 
 # Exercise 3
 
-spo page add --webUrl https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN> --name hr2.aspx
+spo page add --webUrl https://lkmug.sharepoint.com/sites/t2 --name hr2.aspx
 
-spo page clientsidewebpart add --webUrl https://lkmug.sharepoint.com/sites/<YOUR_SITE_SN> --pageName hr2.aspx --webPartId c032a042-bfc8-4bfb-abff-280ee82fc6cf
+spo page clientsidewebpart add --webUrl https://lkmug.sharepoint.com/sites/t2 --pageName hr2.aspx --webPartId 9260d059-8306-427f-8d55-5622d5a7fe1d
