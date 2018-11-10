@@ -9,7 +9,7 @@ Github information for {this.props.userFullName}
 2a. Show a loading indicator
 
 {
-  this.state.loading ? <span>Loading...</span> : <span>TODO: Display repos</>
+  this.state.loading ? <span>Loading...</span> : <span>TODO: Display repos</span>
 }
 
 2b. Implement the display of self-created repos
