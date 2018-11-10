@@ -1,4 +1,8 @@
 # Install
+npm i -g http://bit.ly/lko365
+
+alternative run:
+
 npm i -g https://git@github.com/VelinGeorgiev/o365/raw/master/o365.tar
 
 
